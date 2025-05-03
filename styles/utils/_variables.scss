@@ -21,9 +21,10 @@ $color-gray-800: #1f2937;
 // Brand Colors
 // ---------------------------------------
 
-$color-primary: #1e40af;
+$color-primary: #f97316;
 $color-primary-hover: color.adjust($color-primary, $lightness: -10%);
-$color-secondary: #9333ea; // optional example if you plan for a second theme color
+// $color-secondary: #093275;
+$color-secondary: #121036;
 
 // ---------------------------------------
 // Text Colors
@@ -31,6 +32,18 @@ $color-secondary: #9333ea; // optional example if you plan for a second theme co
 
 $text-base: $color-gray-800;
 $text-light: $color-black;
+
+// ---------------------------------------
+// Background Colors
+// ---------------------------------------
+
+$color-background: #f1f5f9;
+
+// ---------------------------------------
+// Background Colors
+// ---------------------------------------
+
+$overlay-dark: rgba(9, 50, 117, 0.6);
 
 // ---------------------------------------
 // Spacing Scale
