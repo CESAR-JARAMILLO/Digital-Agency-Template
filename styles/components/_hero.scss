@@ -1,0 +1,132 @@
+@use "../utils/variables" as *;
+
+.hero {
+  padding: $spacing-xl 0;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: $spacing-xl;
+    padding: 0 $spacing-xl;
+
+    @media (max-width: $bp-md) {
+      flex-direction: column;
+      padding: 0;
+    }
+
+    @media (max-width: $bp-sm) {
+      padding: 0;
+    }
+  }
+
+  &__content {
+    flex: 2;
+    padding: 0 $spacing-xl;
+
+    @media (max-width: $bp-md) {
+      padding: 0 $spacing-lg;
+    }
+
+    @media (max-width: $bp-sm) {
+      padding: 0 $spacing-md;
+    }
+  }
+
+  &__subheading {
+    font-size: $font-size-sm;
+    color: $color-primary;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__title {
+    font-size: $font-size-3xl;
+    color: $color-black;
+    margin-bottom: $spacing-md;
+  }
+
+  &__description {
+    font-size: $font-size-base;
+    color: $text-base;
+    margin-bottom: $spacing-md;
+  }
+
+  &__bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-bottom: $spacing-sm;
+      padding-left: 1.5rem;
+      position: relative;
+      font-size: $font-size-base;
+      color: $color-black;
+
+      &::before {
+        content: "✔";
+        color: $color-primary;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
+  }
+
+  &__form-wrapper {
+    flex: 1.5;
+    background-color: $color-gray-100;
+    padding: $spacing-lg;
+    border-radius: $radius-md;
+    box-shadow: $shadow-sm;
+    text-align: center;
+
+    @media (max-width: $bp-md) {
+      width: 100%;
+      padding: $spacing-lg $spacing-md;
+    }
+
+    @media (max-width: $bp-sm) {
+      padding: $spacing-lg $spacing-sm;
+    }
+  }
+
+  &__form-title {
+    font-size: $font-size-lg;
+    margin-bottom: $spacing-xs;
+    color: $color-black;
+  }
+
+  &__form-description {
+    font-size: $font-size-base;
+    margin-bottom: $spacing-md;
+    color: $text-base;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+  }
+
+  &__input {
+    padding: $spacing-sm;
+    border: 1px solid $color-gray-300;
+    border-radius: $radius-sm;
+    font-size: $font-size-base;
+  }
+
+  &__submit {
+    padding: $spacing-sm;
+    background-color: $color-primary;
+    color: $color-white;
+    font-weight: 600;
+    border-radius: $radius-sm;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: $color-primary-hover;
+    }
+  }
+}
