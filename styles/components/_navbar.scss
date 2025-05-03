@@ -1,0 +1,139 @@
+@use "sass:color";
+@use "../utils/variables" as *;
+
+.navbar {
+  position: sticky;
+  top: $spacing-md;
+  z-index: $z-index-header;
+  margin: $spacing-md auto;
+  background-color: $color-white;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-md;
+  width: 90%;
+  max-width: 1400px;
+
+  @media (max-width: $bp-md) {
+    top: 0;
+    margin: 0;
+    border-radius: 0;
+    width: 100%;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $spacing-sm $spacing-lg;
+  }
+
+  &__logo a {
+    font-size: $font-size-xl;
+    font-weight: bold;
+    color: $color-black;
+    text-decoration: none;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: $spacing-lg;
+
+    @media (max-width: $bp-md) {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: $color-white;
+      flex-direction: column;
+      gap: $spacing-md;
+      padding: $spacing-lg;
+      border-radius: 0 0 $radius-lg $radius-lg;
+      display: none;
+
+      &--open {
+        display: flex;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: $spacing-md;
+
+    @media (max-width: $bp-md) {
+      flex-direction: column;
+      width: 100%;
+      align-items: center;
+    }
+  }
+
+  &__link {
+    color: $color-gray-800;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: $font-size-base;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  &__cta {
+    background-color: $color-primary;
+    color: $color-white;
+    padding: $spacing-sm $spacing-lg;
+    border-radius: $radius-md;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: $color-primary-hover;
+    }
+
+    @media (max-width: $bp-md) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__toggle {
+    display: none;
+    flex-direction: column;
+    gap: $spacing-xs;
+    background: none;
+    border: none;
+    padding: $spacing-xs;
+    cursor: pointer;
+
+    @media (max-width: $bp-md) {
+      display: flex;
+    }
+
+    &-bar {
+      width: 25px;
+      height: 3px;
+      background-color: $color-black;
+      border-radius: $radius-sm;
+    }
+  }
+}
+
+@media (max-width: $bp-md) {
+  .navbar__logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .navbar--logo-left .navbar__logo {
+    position: static;
+    transform: none;
+  }
+
+  .navbar__toggle {
+    margin-left: auto;
+    position: relative;
+    z-index: 10;
+  }
+}
