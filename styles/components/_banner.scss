@@ -45,6 +45,10 @@
     display: flex;
     justify-content: flex-end;
 
+    @media (max-width: $bp-md) {
+      justify-content: center;
+    }
+
     img {
       width: 80%;
       border-radius: $radius-md;
