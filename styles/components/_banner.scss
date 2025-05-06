@@ -1,0 +1,61 @@
+@use "../utils/variables" as *;
+
+.banner {
+  padding: $spacing-xl 0;
+  margin: 0 auto;
+  background-color: $color-secondary;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $spacing-xl;
+    padding: 0 $spacing-xl;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @media (max-width: $bp-md) {
+      flex-direction: column;
+      padding: 0 $spacing-lg;
+    }
+
+    @media (max-width: $bp-sm) {
+      padding: 0 $spacing-md;
+    }
+  }
+
+  &__text {
+    flex: 1;
+  }
+
+  &__title {
+    font-size: $font-size-3xl;
+    font-weight: 500;
+    color: $color-white;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__description {
+    font-size: $font-size-lg;
+    color: $color-white;
+  }
+
+  &__image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+
+    img {
+      width: 80%;
+      border-radius: $radius-md;
+    }
+  }
+
+  &--reverse &__container {
+    flex-direction: row-reverse;
+
+    @media (max-width: $bp-md) {
+      flex-direction: column;
+    }
+  }
+}
