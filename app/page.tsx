@@ -1,4 +1,5 @@
 import BannerSection from "@/components/BannerSection";
+import CtaSection from "@/components/CtaSection";
 import FeatureHighlight from "@/components/FeatureHighlight";
 import Hero from "@/components/Hero";
 import TestimonialSection from "@/components/TestimonialsSection";
@@ -17,6 +18,8 @@ export default function Home() {
       <BannerSection {...bannerData} />
 
       <TestimonialSection />
+
+      <CtaSection />
     </>
   );
 }
