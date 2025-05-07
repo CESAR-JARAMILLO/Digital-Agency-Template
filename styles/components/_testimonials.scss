@@ -1,0 +1,138 @@
+@use "../utils/variables" as *;
+
+.testimonials {
+  background-color: $color-gray-100;
+  padding-bottom: $spacing-xl;
+
+  &__header {
+    text-align: center;
+    padding: $spacing-lg $spacing-md;
+  }
+
+  &__title {
+    font-size: $font-size-3xl;
+    color: $color-black;
+    margin: 0;
+  }
+
+  &__slider {
+    padding: $spacing-xl $spacing-md 0;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  &__track-wrapper {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  &__track {
+    display: flex;
+    transition: transform 0.4s ease;
+    column-gap: $spacing-lg;
+    width: 100%;
+  }
+
+  &__card {
+    flex: 0 0 calc(33.333% - #{$spacing-lg});
+    max-width: calc(33.333% - #{$spacing-lg});
+    background-color: $color-white;
+    border-radius: $radius-md;
+    box-shadow: $shadow-md;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: $spacing-md;
+
+    @media (max-width: $bp-md) {
+      flex: 0 0 90%;
+      max-width: 90%;
+    }
+
+    @media (max-width: $bp-sm) {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+
+  &__card-head {
+    background-color: $color-secondary;
+    height: 60px;
+  }
+
+  &__avatar-wrapper {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+
+    img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid $color-white;
+      background-color: $color-white;
+    }
+  }
+
+  &__card-body {
+    padding: $spacing-xl $spacing-md $spacing-md;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__name {
+    font-size: $font-size-sm;
+    font-weight: 600;
+    color: $color-black;
+    margin-bottom: $spacing-xs;
+  }
+
+  &__role {
+    font-size: $font-size-xs;
+    color: $color-gray-400;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__quote {
+    font-size: $font-size-base;
+    color: $text-base;
+    font-style: italic;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__stars {
+    color: $color-primary;
+    font-size: $font-size-sm;
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-md;
+    margin-top: $spacing-lg;
+  }
+
+  &__arrow {
+    width: 40px;
+    height: 40px;
+    background-color: $color-secondary;
+    color: $color-white;
+    border: none;
+    border-radius: $radius-md;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:disabled {
+      background-color: $color-gray-300;
+      cursor: not-allowed;
+    }
+  }
+}
