@@ -6,7 +6,7 @@ import { useInView } from "framer-motion";
 
 type Props = {
   reverse?: boolean;
-  icon?: React.ReactNode;
+  icon?: string;
   tag: string;
   title: string;
   description: string;
@@ -50,7 +50,7 @@ const FeatureHighlight = ({
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <div className="feature__tag">
-            <span className="feature__icon">{icon}</span>
+            <img className="feature__icon" src={icon} />
             <h5 className="feature__tagline">{tag}</h5>
           </div>
           <h3 className="feature__title">{title}</h3>
